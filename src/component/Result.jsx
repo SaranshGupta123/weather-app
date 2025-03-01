@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Result = ({ weatherData, historyData, historySearch }) => {
- 
   return (
     <>
       <div>

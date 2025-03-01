@@ -1,179 +1,242 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/hehe.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #333;
+}
+
 .App {
-  background-image: url('./assets/hehe.jpg');
+  background-image: url('./assets/weather.jpeg'); /* Replace with your image URL for the home card */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 20px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  background-color: rgba(173, 116, 116, 0.8);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  backdrop-filter: blur(5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  color: #8910cf; /* Light text for image background */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .Search-box {
   display: flex;
   flex-direction: row;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .Search {
   width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  border: none;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  padding: 0 20px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  font-size: 20px;
+  padding: 0 25px;
   outline: none;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .Search:focus {
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-color: #bbb;
 }
 
 .button {
   background-color: #6a5acd;
   border: none;
-  border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(106, 90, 205, 0.5);
+  border-radius: 30px;
+  box-shadow: 0 7px 20px rgba(106, 90, 205, 0.5);
   color: white;
-  font-size: 18px;
-  padding: 10px 25px;
+  font-size: 20px;
+  padding: 12px 30px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(106, 90, 205, 0.7);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(106, 90, 205, 0.7);
 }
 
 .City {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 48px;
-  color: #333; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-  margin-bottom: 15px;
+  font-size: 60px;
+  color: #c01313;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out;
+  text-align: center;
 }
 
 .Temperature {
   display: flex;
   justify-content: space-around;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
-  color: #444; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  margin-bottom: 15px;
-  animation: slideIn 1s ease-in-out; 
+  color: #c01313;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-in-out;
+  text-align: center;
 }
 
 .other {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   flex-direction: column;
-  animation: scaleIn 1s ease-in-out; 
+  animation: scaleIn 1s ease-in-out;
 }
 
 .Search-city {
-  margin-top: 10px;
-  font-size: 32px;
-  color: #333; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+  margin-top: 15px;
+  font-size: 36px;
+  color: #c01313;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 .weather-icon img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   animation: rotateIcon 2s linear infinite;
 }
 
 .History {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 28px;
-  margin-top: 30px;
+  font-size: 32px;
+  margin-top: 40px;
   font-weight: 600;
-  color: #333; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-  animation: slideUp 1s ease-in-out; 
+  color: #c01313;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  animation: slideUp 1s ease-in-out;
+  text-align: center;
 }
 
 .item {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
   list-style: none;
   padding: 0;
 }
 
 .item li {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 20px;
-  color: #444; 
+  background-color: rgba(240, 240, 240, 0.8);
+  border-radius: 25px;
+  padding: 12px 25px;
+  margin: 8px;
+  font-size: 22px;
+  color: #555;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .item li:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05)
+  background-color: rgba(220, 220, 220, 0.9);
+  transform: scale(1.08);
 }
 
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #333;
-  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
-  color: white;
+  color: #444;
   text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
+  padding: 12px 25px;
+  margin: 0 15px;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
+  font-size:18px;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  background-color: #555;
+  background-color: rgba(230, 230, 230, 0.8);
 }
 
 .page {
   text-align: center;
-  padding: 20px;
-  color: #333;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  color: #444;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
 }
 
 .page h2 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 .page p {
-  font-size: 1.2em;
-  line-height: 1.6;
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+.page2 {
+  text-align: center;
+  padding: 30px;
+  color: #444;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+}
+
+.page2 h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.page2 p {
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+
+.navbar a.active {
+  background-color: #ce1b1b;
+  color: white;
+}
+
+.page {
+    background-image: url('./assets/about.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.page2 {
+  background-image: url('./assets/contact.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.page h2, .page p {
+    color: #1fd8f8e7;
+}
+.page2 h2, .page2 p {
+  color: #e68d1a;
 }
