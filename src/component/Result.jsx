@@ -14,6 +14,7 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                 <div>Min Temp: {weatherData.main.temp_min} deg</div>
                 <div>Humidity: {weatherData.main.humidity}%</div>
                 <div>Pressure: {weatherData.main.pressure} hPa</div>
+                <div>Wind Speed: {weatherData.wind.speed} m/s</div>
               </div>
               <div className="other">
                 <div>
