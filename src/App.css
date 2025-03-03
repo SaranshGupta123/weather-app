@@ -84,7 +84,7 @@ body {
 .Temperature {
   display: flex;
   justify-content: space-around;
-  font-size: 25px;
+  font-size: 17px;
   font-weight: 600;
   color: #c01313;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
