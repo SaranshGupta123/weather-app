@@ -11,7 +11,7 @@ import Navbar from './component/Navbar';
 
 const Content = () => {
   const [search, setSearch] = useState('');
-  const [weather, setWeather] = useState(null); 
+  const [weather, setWeather] = useState(null);
   const [history, setHistory] = useState([]);
   const [forecast, setForecast] = useState([]);
   const [searchDate, setSearchDate] = useState(null);
@@ -28,11 +28,11 @@ const Content = () => {
             setHistory([...history, search]);
           }
           setWeather(response.data);
-          setSearchDate(new Date()); 
+          setSearchDate(new Date());
           return axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=aa13436c3b8dba4deed11d1b67d5d1b0&units=metric`);
         })
         .then((forecastResponse) => {
-          setForecast(forecastResponse.data.list.slice(0, 8)); 
+          setForecast(forecastResponse.data.list.slice(0, 8));
         })
         .catch((error) => {
           console.log(error);
@@ -59,10 +59,16 @@ const Content = () => {
   };
 
   return (
-    <div className="App">
-      <Search searchData={search} eventHandler={changeSearch} searchWeather={searchWeather} />
-      <Result weatherData={weather} historyData={history} historySearch={historySearch} forecastData={forecast} searchDate={searchDate} />
-    </div>
+    <>
+      <div className='App2'>
+        <Search searchData={search} eventHandler={changeSearch} searchWeather={searchWeather} />
+      </div>
+
+      <div className="App">
+        <Result weatherData={weather} historyData={history} historySearch={historySearch} forecastData={forecast} searchDate={searchDate} />
+      </div>
+    </>
+
   );
 };
 

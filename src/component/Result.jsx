@@ -7,24 +7,29 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
         <div>
           {weatherData ? (
             <>
-              <h2 className="City">{weatherData.name}</h2>
-              {searchDate && <p>Search Date: {searchDate.toLocaleString()}</p>}
-              <div className="Temperature">
-                <div>Max Temp: {weatherData.main.temp_max} deg</div>
-                <div>Min Temp: {weatherData.main.temp_min} deg</div>
-                <div>Humidity: {weatherData.main.humidity}%</div>
-                <div>Pressure: {weatherData.main.pressure} hPa</div>
-                <div>Wind Speed: {weatherData.wind.speed} m/s</div>
-              </div>
-              <div className="other">
-                <div>
-                  <img
-                    src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-                    alt=""
-                    className="weather-icon"
-                  />
+              <div className='other2'>
+                <div className='other3'>
+                  <h2 className="City">{weatherData.name}</h2>
+                  {searchDate && <p>Search Date: {searchDate.toLocaleString()}</p>}
                 </div>
-                <div className="Search-city">{weatherData.weather[0].main}</div>
+                <div className='other4'>
+                  <div className='temperature1'>Max Temp: {weatherData.main.temp_max} deg</div>
+                  <div >Min Temp: {weatherData.main.temp_min} deg</div>
+                  <div>
+                    <img
+                      src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                      alt=""
+                      className="weather-icon"
+                    />
+                  </div>
+                  <div className="Search-city">{weatherData.weather[0].main}</div>
+                </div>
+              </div>
+
+              <div className="Temperature">
+                <div className='Humidity'>Humidity: {weatherData.main.humidity}%</div>
+                <div className='Pressure'>Pressure: {weatherData.main.pressure} hPa</div>
+                <div className='Wind'>Wind Speed: {weatherData.wind.speed} m/s</div>
               </div>
               <div>
                 <h3>Hourly Forecast:</h3>
