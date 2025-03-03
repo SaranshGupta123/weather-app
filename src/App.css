@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./assets/hehe.jpg'); /* Replace with your image URL */
+  background-image: url('./assets/hehe.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10,18 +10,24 @@ body {
 }
 
 .App {
-  background-image: url('./assets/weather.jpeg'); /* Replace with your image URL for the home card */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4)), url('./assets/weather.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   max-width: 800px;
   margin: 30px auto;
   padding: 40px;
-  color: #8910cf; /* Light text for image background */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  color: #8910cf;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 .Search-box {
@@ -78,12 +84,11 @@ body {
 .Temperature {
   display: flex;
   justify-content: space-around;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 600;
   color: #c01313;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
-  animation: slideIn 1s ease-in-out;
   text-align: center;
 }
 
@@ -117,7 +122,10 @@ body {
   color: #c01313;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   animation: slideUp 1s ease-in-out;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item {
@@ -239,4 +247,18 @@ body {
 }
 .page2 h2, .page2 p {
   color: #e68d1a;
+}
+
+.forecast {
+  display: flex;
+  overflow-x: auto;
+}
+
+.forecast-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.forecast-icon {
+  width: 50px;
 }
