@@ -1,16 +1,16 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./assets/hehe.jpg');
+  background-color: rgba(19, 145, 222, 0.485);
+  background-image: linear-gradient(blue, rgb(16, 184, 230));
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: Arial;
   color: #333;
 }
-
 .App {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4)), url('./assets/weather.jpeg');
+  background-image: linear-gradient(to right, rgba(15, 111, 246, 0.984), rgb(5, 235, 239));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,7 +25,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App2{
+.App2 {
   width: 1000px;
   display: flex;
   flex-direction: column;
@@ -37,6 +37,7 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
+
 
 .Search-box {
   display: flex;
@@ -56,7 +57,7 @@ body {
   padding: 0 25px;
   outline: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  margin-left: 450px;
+  margin-left: 600px;
   margin-top: 50px;
 }
 
@@ -144,7 +145,7 @@ body {
   width: 80px;
   height: 80px;
   margin-left: -100px;
-  margin-top: -800px;
+  margin-top: -60px;
 }
 
 .History {
@@ -259,7 +260,7 @@ body {
 }
 
 .page {
-    background-image: url('./assets/about.jpeg');
+  background-image: linear-gradient(to right, rgba(83, 42, 232, 0), rgb(6, 192, 220));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -267,7 +268,6 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 .page2 {
-  background-image: url('./assets/contact.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
