@@ -9,6 +9,7 @@ body {
   font-family: Arial;
   color: #333;
 }
+
 .App {
   background-image: linear-gradient(to right, rgba(15, 111, 246, 0.984), rgb(5, 235, 239));
   background-size: cover;
@@ -103,12 +104,15 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
-.other2{
+
+.other2 {
   display: flex;
 }
-.other4{
+
+.other4 {
   margin-left: 370px;
 }
+
 .other {
   display: flex;
   justify-content: center;
@@ -126,22 +130,22 @@ body {
   text-align: center;
 }
 
-.Humidity{
+.Humidity {
   padding: 40px;
   background-color: rgba(0, 162, 255, 0.37);
 }
 
-.Pressure{
+.Pressure {
   padding: 40px;
   background-color: rgba(0, 162, 255, 0.37);
 }
 
-.Wind{
+.Wind {
   padding: 40px;
   background-color: rgba(0, 162, 255, 0.37);
 }
 
-.weather-icon{
+.weather-icon {
   width: 80px;
   height: 80px;
   margin-left: -100px;
@@ -205,7 +209,7 @@ body {
   margin: 0 15px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .navbar a:hover,
@@ -222,6 +226,13 @@ body {
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   max-width: 700px;
+  background-image: linear-gradient(to right, rgb(84, 139, 235), rgb(27, 6, 216));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #cfe7ece7;
 }
 
 .page h2 {
@@ -233,6 +244,7 @@ body {
   font-size: 1.3em;
   line-height: 1.8;
 }
+
 .page2 {
   text-align: center;
   padding: 30px;
@@ -242,6 +254,12 @@ body {
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   max-width: 700px;
+  background-image: linear-gradient(to right, rgb(84, 139, 235), rgb(14, 29, 243));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #cfe7ece7;
 }
 
 .page2 h2 {
@@ -257,28 +275,6 @@ body {
 .navbar a.active {
   background-color: #ce1b1b;
   color: white;
-}
-
-.page {
-  background-image: linear-gradient(to right, rgba(83, 42, 232, 0), rgb(6, 192, 220));
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-.page2 {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.page h2, .page p {
-    color: #1fd8f8e7;
-}
-.page2 h2, .page2 p {
-  color: #e68d1a;
 }
 
 .forecast {
