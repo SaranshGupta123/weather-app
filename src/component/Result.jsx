@@ -31,7 +31,7 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                 <div className='Pressure'>Pressure: {weatherData.main.pressure} hPa</div>
                 <div className='Wind'>Wind Speed: {weatherData.wind.speed} m/s</div>
               </div>
-              <div>
+              <div className='forecast1'>
                 <h3>Hourly Forecast:</h3>
                 <div className="forecast">
                   {forecastData.map((item, index) => (
