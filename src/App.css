@@ -112,7 +112,14 @@ body {
 .Humidity,
 .Pressure,
 .Wind {
-  font-size: 16px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-extra{
+  font-size: 34px;
+  margin-bottom: 14px;
 }
 
 .weather-icon {
@@ -229,6 +236,12 @@ body {
   height: 24px;
   display: block;
   margin: 5px auto;
+}
+
+.City .city-icon{
+  width: 15px;
+  margin-bottom: -4px;
+  margin-right: 5px;
 }
 
 @media (max-width: 420px) {

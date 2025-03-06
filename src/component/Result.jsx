@@ -1,4 +1,9 @@
 import React from 'react';
+import { FaLocationDot } from "react-icons/fa6";
+import { SlCalender } from "react-icons/sl";
+import { WiHumidity } from "react-icons/wi";
+import { GiPressureCooker } from "react-icons/gi";
+import { FaWind } from "react-icons/fa";
 
 const Result = ({ weatherData, historyData, historySearch, forecastData, searchDate }) => {
   return (
@@ -9,8 +14,8 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
             <>
               <div className='other2'>
                 <div className='other3'>
-                  <h2 className="City">{weatherData.name}</h2>
-                  {searchDate && <p>Search Date: {searchDate.toLocaleString()}</p>}
+                  <h2 className="City"><FaLocationDot className='city-icon' />{weatherData.name}</h2>
+                  {searchDate && <p><SlCalender /> Search Date: {searchDate.toLocaleString()}</p>}
                 </div>
                 <div className='other4'>
                   <div className='temperature1'>Max Temp: {weatherData.main.temp_max} deg</div>
@@ -27,9 +32,9 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
               </div>
 
               <div className="Temperature">
-                <div className='Humidity'>Humidity: {weatherData.main.humidity}%</div>
-                <div className='Pressure'>Pressure: {weatherData.main.pressure} hPa</div>
-                <div className='Wind'>Wind Speed: {weatherData.wind.speed} m/s</div>
+                <div className='Humidity'><WiHumidity className='weather-extra'/>Humidity: {weatherData.main.humidity}%</div>
+                <div className='Pressure'><GiPressureCooker className='weather-extra'/>Pressure: {weatherData.main.pressure} hPa</div>
+                <div className='Wind'><FaWind className='weather-extra'/>Wind Speed: {weatherData.wind.speed} m/s</div>
               </div>
               <div className='forecast1'>
                 <h3>Hourly Forecast:</h3>

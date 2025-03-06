@@ -40,7 +40,7 @@ const Content = () => {
     }
   };
 
-  const historySearch = async (data) => {
+  const historySearch = (data) => {
     setSearch(data);
     if (data !== '') {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=aa13436c3b8dba4deed11d1b67d5d1b0&units=metric`)
