@@ -4,6 +4,44 @@ import { SlCalender } from "react-icons/sl";
 import { WiHumidity } from "react-icons/wi";
 import { GiPressureCooker } from "react-icons/gi";
 import { FaWind } from "react-icons/fa";
+import {
+  WiDaySunny,
+  WiCloudy,
+  WiRain,
+  WiSnow,
+  WiThunderstorm,
+  WiFog,
+  WiNightClear,
+  WiNightCloudy,
+  WiNightRain,
+  WiNightSnow,
+  WiNightThunderstorm,
+  WiNightFog,
+} from 'react-icons/wi';
+
+const getWeatherIcon = (code) => {
+  const isNight = code.includes('n');
+  const iconId = code.slice(0, 2);
+
+  switch (iconId) {
+    case '01':
+      return isNight ? <WiNightClear className="weather-icon" /> : <WiDaySunny className="weather-icon" />;
+    case '02':
+      return isNight ? <WiNightCloudy className="weather-icon" /> : <WiCloudy className="weather-icon" />;
+    case '03':
+      return <WiCloudy className="weather-icon" />;
+    case '4':
+      return isNight ? <WiNightRain className="weather-icon" /> : <WiRain className="weather-icon" />;
+    case '5':
+      return isNight ? <WiNightThunderstorm className="weather-icon" /> : <WiThunderstorm className="weather-icon" />;
+    case '6':
+      return isNight ? <WiNightSnow className="weather-icon" /> : <WiSnow className="weather-icon" />;
+    case '7':
+      return isNight ? <WiNightFog className="weather-icon" /> : <WiFog className="weather-icon" />;
+    default:
+      return <WiCloudy className="weather-icon" />;
+  }
+};
 
 const Result = ({ weatherData, historyData, historySearch, forecastData, searchDate }) => {
   return (
@@ -18,36 +56,28 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                   {searchDate && <p><SlCalender /> Search Date: {searchDate.toLocaleString()}</p>}
                 </div>
                 <div className='other4'>
-                  <div className='temperature1'>Max Temp: {weatherData.main.temp_max} deg</div>
-                  <div >Min Temp: {weatherData.main.temp_min} deg</div>
+                  <div className='temperature1'>Max Temp: {weatherData.main.temp_max} °C</div>
+                  <div>Min Temp: {weatherData.main.temp_min} °C</div>
                   <div>
-                    <img
-                      src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-                      alt=""
-                      className="weather-icon"
-                    />
+                    {getWeatherIcon(weatherData.weather[0].icon)}
                   </div>
                   <div className="Search-city">{weatherData.weather[0].main}</div>
                 </div>
               </div>
 
               <div className="Temperature">
-                <div className='Humidity'><WiHumidity className='weather-extra'/>Humidity: {weatherData.main.humidity}%</div>
-                <div className='Pressure'><GiPressureCooker className='weather-extra'/>Pressure: {weatherData.main.pressure} hPa</div>
-                <div className='Wind'><FaWind className='weather-extra'/>Wind Speed: {weatherData.wind.speed} m/s</div>
+                <div className='Humidity'><WiHumidity className='weather-extra' />Humidity: {weatherData.main.humidity}%</div>
+                <div className='Pressure'><GiPressureCooker className='weather-extra' />Pressure: {weatherData.main.pressure} hPa</div>
+                <div className='Wind'><FaWind className='weather-extra' />Wind Speed: {weatherData.wind.speed} m/s</div>
               </div>
               <div className='forecast1'>
                 <h3>Hourly Forecast:</h3>
                 <div className="forecast">
                   {forecastData.map((item, index) => (
                     <div key={index} className="forecast-item">
-                      <p>{new Date().toLocaleTimeString()}</p>
-                      <img
-                        src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-                        alt=""
-                        className="forecast-icon"
-                      />
-                      <p>{item.main.temp} deg</p>
+                      <p>{new Date(item.dt * 1000).toLocaleTimeString()}</p>
+                      {getWeatherIcon(item.weather[0].icon)}
+                      <p>{item.main.temp} °C</p>
                     </div>
                   ))}
                 </div>
