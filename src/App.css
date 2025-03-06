@@ -95,7 +95,11 @@ body {
 }
 
 .temperature1 {
-  margin-top: 20px;
+  font-size: 27px;
+}
+
+#temperature1{
+  margin-top: 40px;
 }
 
 .other4 {
@@ -106,6 +110,7 @@ body {
 }
 
 .Search-city {
+  font-size: 27px;
   margin-top: -10px;
 }
 
@@ -126,8 +131,9 @@ body {
   font-size: 60px;
   width: 60px;
   height: 60px;
-  margin-left: -250px;
-  margin-top: -90px;  
+  margin-left: -330px;
+  margin-top: -100px;
+  margin-bottom: 15px;  
 }
 .forecast-item .weather-icon{
   font-size: 60px;

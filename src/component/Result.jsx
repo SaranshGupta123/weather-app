@@ -56,8 +56,8 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                   {searchDate && <p><SlCalender /> Search Date: {searchDate.toLocaleString()}</p>}
                 </div>
                 <div className='other4'>
-                  <div className='temperature1'>Max Temp: {weatherData.main.temp_max} °C</div>
-                  <div>Min Temp: {weatherData.main.temp_min} °C</div>
+                  <div className='temperature1' id='temperature1'>Max Temp: {weatherData.main.temp_max} °C</div>
+                  <div className='temperature1'>Min Temp: {weatherData.main.temp_min} °C</div>
                   <div>
                     {getWeatherIcon(weatherData.weather[0].icon)}
                   </div>
