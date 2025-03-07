@@ -42,6 +42,13 @@ const getWeatherIcon = (code) => {
       return <WiCloudy className="weather-icon" />;
   }
 };
+
+const formatSearchDate = (date) => {
+  if (!date) return '';
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString(undefined, options);
+};
+
 const Time1 = (date) => {
   let hour1 = date.getHours();
   let hour2 = "AM"; 
@@ -62,12 +69,12 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
               <div className='other2'>
                 <div className='other3'>
                   <h2 className="City"><FaLocationDot className='city-icon' />{weatherData.name}</h2>
-                  {searchDate && <p><SlCalender /> Search Date: {searchDate.toLocaleString()}</p>}
+                  {searchDate && <p className='present-date'><SlCalender /> Search Date: {formatSearchDate(searchDate)}</p>}
                 </div>
                 <div className='other4'>
-                  <div className='temperature1' id='temperature1'>Max Temp: {weatherData.main.temp_max} °C</div>
-                  <div className='temperature1'>Min Temp: {weatherData.main.temp_min} °C</div>
-                  <div>
+                  <div className='temperature1' id='temperature1'>Max Temp: {Math.round(weatherData.main.temp_max)} °C</div>
+                  <div className='temperature1'>Min Temp: {Math.round(weatherData.main.temp_min)} °C</div>
+                  <div className='icons'>
                     {getWeatherIcon(weatherData.weather[0].icon)}
                   </div>
                   <div className="Search-city">{weatherData.weather[0].main}</div>
@@ -86,7 +93,7 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                     <div key={index} className="forecast-item">
                       <p>{Time1(new Date(item.dt * 1000))}</p>
                       {getWeatherIcon(item.weather[0].icon)}
-                      <p>{item.main.temp} °C</p>
+                      <p>{Math.round(item.main.temp)} °C</p>
                     </div>
                   ))}
                 </div>

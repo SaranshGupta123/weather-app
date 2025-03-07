@@ -39,7 +39,7 @@ body {
   border: 1px solid #5a6296;
   border-radius: 18px;
   background-color: rgba(59, 66, 122, 0.5);
-  color: #ffffff;
+  color: white;
   font-size: 16px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM6.5 10.5a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@ body {
 }
 
 .City {
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 5px;
 }
 
@@ -143,6 +143,7 @@ body {
   margin-top: -100px;
   margin-bottom: 15px;  
 }
+
 .forecast-item .weather-icon{
   font-size: 60px;
 }
@@ -231,13 +232,11 @@ body {
 .forecast {
   display: flex;
   overflow-x: hidden;
-  margin-left: -10px;
   padding: 10px;
-  gap: 5px;
   border-radius: 8px;
   margin-top: 20px;
   white-space: nowrap;
-  justify-content: space-between;
+  gap: 20px;
   width: 900px;
 }
 
@@ -257,9 +256,13 @@ body {
 }
 
 .City .city-icon{
-  width: 15px;
+  width: 22px;
   margin-bottom: -4px;
   margin-right: 5px;
+}
+.present-date{
+  font-size: 22px;
+  margin-top: -1px;
 }
 
 @media (max-width: 420px) {
@@ -267,7 +270,7 @@ body {
     margin-top: -15px;
   }
   .other4 {
-    margin-top: 20px;
+    margin-top: 90px;
   }
   .Search-box {
     display: flex;
@@ -278,6 +281,10 @@ body {
   }
   .App {
     max-width: 270px;
+  }
+  .icons{
+    margin-right: -330px;
+    margin-top: 70px;
   }
   .weather-icon {
     width: 60px;
@@ -292,21 +299,21 @@ body {
     flex-wrap: wrap;
   }
   .Temperature > div {
-    width: 60px;
-    height: 100px;
+    width: 150px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
   }
-  .forecast1{
-    width: 900px;
+  .forecast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+    width: auto; 
     margin-bottom: 50px;
   }
-  .forecast{
-    margin-left: 65px;
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    flex-wrap: wrap;
-}
+
+  .forecast-item {
+    width: auto; 
+  }
 }
