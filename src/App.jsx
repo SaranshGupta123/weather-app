@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { useState } from 'react';
 import Search from './component/Search';
 import Result from './component/Result';
 import axios from 'axios';
@@ -58,17 +57,22 @@ const Content = () => {
     }
   };
 
+  const Keypress = (event) => {
+    if (event.key === 'Enter') {
+      searchWeather();
+    }
+  };
+
   return (
     <>
-      <div className='App2'>
-        <Search searchData={search} eventHandler={changeSearch} searchWeather={searchWeather} />
+      <div className="App2">
+        <Search searchData={search} eventHandler={changeSearch} searchWeather={searchWeather} onKey={Keypress} />
       </div>
 
       <div className="App">
         <Result weatherData={weather} historyData={history} historySearch={historySearch} forecastData={forecast} searchDate={searchDate} />
       </div>
     </>
-
   );
 };
 

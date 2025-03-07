@@ -42,6 +42,15 @@ const getWeatherIcon = (code) => {
       return <WiCloudy className="weather-icon" />;
   }
 };
+const Time1 = (date) => {
+  let hour1 = date.getHours();
+  let hour2 = "AM"; 
+  if (hour1 >= 12) {
+    hour2 = "PM";
+  }
+  let Time2 = hour1 + " " + hour2; 
+  return Time2;
+}
 
 const Result = ({ weatherData, historyData, historySearch, forecastData, searchDate }) => {
   return (
@@ -75,7 +84,7 @@ const Result = ({ weatherData, historyData, historySearch, forecastData, searchD
                 <div className="forecast">
                   {forecastData.map((item, index) => (
                     <div key={index} className="forecast-item">
-                      <p>{new Date(item.dt * 1000).toLocaleTimeString()}</p>
+                      <p>{Time1(new Date(item.dt * 1000))}</p>
                       {getWeatherIcon(item.weather[0].icon)}
                       <p>{item.main.temp} °C</p>
                     </div>
